@@ -1,6 +1,10 @@
  <ion-modal-view class="ionic-select-modal" ng-class="::ui.modalClass">
 
     <ion-header-bar ng-class="::ui.headerFooterClass">
+      <button class="button back-button button-clear" ng-click="closeModal()">
+        <i class="icon {{::ui.backButtonIcon}}"></i>
+        <span class="default-title">{{::ui.backButtonText}}</span>
+      </button>
       <h1 class="title">{{::ui.modalTitle}}</h1>
     </ion-header-bar>
 

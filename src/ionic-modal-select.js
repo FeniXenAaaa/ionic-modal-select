@@ -44,7 +44,7 @@ function compile($compile) {
 }
 
 
-function modalSelect($ionicModal, $timeout, $filter, $parse, $templateCache ) {
+function modalSelect($ionicModal, $ionicConfig, $timeout, $filter, $parse, $templateCache ) {
 
 		const modalTemplateMultiple = require('raw!./modal-template-multiple.html');
 		const modalTemplate = require('raw!./modal-template.html');
@@ -84,8 +84,11 @@ function modalSelect($ionicModal, $timeout, $filter, $parse, $templateCache ) {
 					hideReset : iAttrs.hideReset  !== "true" ? false : true,
 					resetButton : iAttrs.resetButton || 'Reset',
 					cancelButton : iAttrs.cancelButton || 'Cancel',
+					backButtonText: $ionicConfig.backButton.text(),
+					backButtonIcon: $ionicConfig.backButton.icon(),
 					loadListMessage : iAttrs.loadListMessage || 'Loading',
 					modalClass : iAttrs.modalClass || '',
+					hideFooter: iAttrs.hideFooter !== "true" ? false : true,
 					headerFooterClass : iAttrs.headerFooterClass || 'bar-stable',
 					value  : null,
 					selectedClass : iAttrs.selectedClass || 'option-selected',
